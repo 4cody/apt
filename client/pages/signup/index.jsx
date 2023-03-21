@@ -1,18 +1,30 @@
 import { useState } from "react";
+import axios from "axios";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== passwordVerify) {
       alert("Passwords do not match");
       return;
     }
-    // Here you can submit the form data to your backend API
-    console.log(`Email: ${email}, Password: ${password}`);
+    const res = await axios.post(
+      "http://localhost:3000/login",
+      {
+        email,
+        password,
+      },
+      {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }
+    );
+
+    console.log(res);
   };
 
   return (
