@@ -1,23 +1,26 @@
 import mongoose from "mongoose";
-import passportLocal from "passport-local-mongoose";
 
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  firstname: {
+  name: {
     type: String,
     default: "",
   },
-  lastname: {
+  email: {
     type: String,
     default: "",
   },
-  admin: {
-    type: Boolean,
-    default: false,
+  password: {
+    type: String,
+    default: "",
+  },
+  role: {
+    type: String,
+    enum: ["owner", "renter", "admin"],
+    required: true,
+    default: "renter",
   },
 });
-
-userSchema.plugin(passportLocal);
 
 export default mongoose.model("User", userSchema);

@@ -1,6 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import passport from "passport";
 import createError from "http-errors";
 import logger from "morgan";
 import dotenv from "dotenv";
@@ -8,15 +7,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // ROUTER IMPORTS
-// import authRouter from "./auth.js";
 import propertyRouter from "./routes/propertyRouter.js";
 import userRouter from "./routes/userRouter.js";
 
 const db = process.env.MONGO_URI;
 
-// DB Connection
 const connectDB = async () => {
-  console.log("Attempting db con..");
+  console.log("Attempting db connection..");
   try {
     await mongoose.connect(db, {
       useNewUrlParser: true,
@@ -31,14 +28,94 @@ const connectDB = async () => {
   }
 };
 
-//  Start/Configure App
 const app = express();
+
+// import User from "./models/user.js";
+// const users = [
+//   {
+//     name: "John",
+//     email: "john@example.com",
+//     password: "password",
+//     role: "owner",
+//   },
+//   {
+//     name: "Jane",
+//     email: "jane@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Bob",
+//     email: "bob@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Alice",
+//     email: "alice@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Mary",
+//     email: "mary@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Tom",
+//     email: "tom@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Sarah",
+//     email: "sarah@example.com",
+//     password: "password",
+//     role: "owner",
+//   },
+//   {
+//     name: "Eve",
+//     email: "eve@example.com",
+//     password: "password",
+//     role: "owner",
+//   },
+//   {
+//     name: "Alex",
+//     email: "alex@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Mike",
+//     email: "mike@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "Lucy",
+//     email: "lucy@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+//   {
+//     name: "David",
+//     email: "david@example.com",
+//     password: "password",
+//     role: "renter",
+//   },
+// ];
+// User.insertMany(users)
+//   .then(() => {
+//     console.log("Users inserted successfully");
+//   })
+//   .catch((err) => {
+//     console.log("Error inserting users", err);
+//   });
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.bodyParser());
-// app.use(cors());
 
 //  Cors
 app.use((req, res, next) => {
@@ -54,11 +131,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(passport.initialize());
-
-// app.use("/", authRouter);
+app.use("/", userRouter);
 app.use("/properties", propertyRouter);
-app.use("/user", userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
