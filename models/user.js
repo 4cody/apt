@@ -19,7 +19,6 @@ const userSchema = new Schema({
     type: String,
     enum: ["owner", "renter", "admin"],
     required: true,
-    default: "renter",
   },
 });
 
