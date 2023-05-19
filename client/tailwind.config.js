@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        footer: "1fr, 1fr, 1fr, 1fr, 2fr",
+      },
+    },
   },
   plugins: [],
 };

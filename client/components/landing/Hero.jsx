@@ -7,7 +7,7 @@ const Hero = () => {
       <h1 className="text-blue-400">Manage</h1>
       <h1>Automate</h1>
       <div>
-        <button className="bg-blue-400 border-blue-400 px-6 py-3 rounded-md font-semibold my-4">
+        <button className="bg-blue-400 border-blue-400 px-5 py-2 rounded-md font-semibold my-4 text-3xl ">
           Learn More
         </button>
       </div>

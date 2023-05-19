@@ -1,6 +1,9 @@
 import React from "react";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Data from "../data";
+import Cloud from "../cloud";
+import Footer from "../footer";
 
 const tempArr = [0, 1, 2, 3, 4, 5, 6, 7];
 
@@ -17,34 +20,15 @@ const CarouselItem = () => {
 
 const Landing = () => {
   return (
-    <div className="bg-gray-100 min-h-screen w-full">
+    <div className="min-h-screen w-full">
       <section className="hero h-screen text-slate-50">
         <Navbar />
-
         <Hero />
       </section>
-      <main className="bg-slate-500 overflow-hidden">
-        {/* <div className="bg-emerald-700 py-16 gap-x-12 w-max">
-          <CarouselItem />
-        </div> */}
-        <section>
-          <div className="py-8 mb-72 border-y-4 border-indigo-500 flex justify-around">
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-          </div>
-          <div className="py-8 mb-72 border-y-4 border-indigo-500 flex justify-around">
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-          </div>
-          <div className="py-8 mb-72 border-y-4 border-indigo-500 flex justify-around">
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-          </div>
-          <div className="py-8 mb-72 border-y-4 border-indigo-500 flex justify-around">
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-            <div className="h-96 w-1/3 bg-gray-100"></div>
-          </div>
-        </section>
+      <main className="overflow-hidden">
+        <Data />
+        <Cloud />
+        <Footer />
       </main>
     </div>
   );

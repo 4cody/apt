@@ -37,3 +37,30 @@ h2 {
 .hero {
   background: url("../public/img/cyber-bg.png") no-repeat center center/cover;
 }
+
+.data:before {
+  content: "";
+  position: absolute;
+  background: url("../public/img/data-bg.png") no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.cloud:before {
+  content: "";
+  position: absolute;
+  background: url("../public/img/cloud-bg.png") no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.footer:before {
+  content: "";
+  position: absolute;
+  background: url("../public/img/footer-bg.jpg") no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
