@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --slate-5: 13, 23, 26;
+  --slate-3: 162, 169, 171;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +26,20 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.text-slate-5 {
+  color: rgb(var(--slate-5));
+}
+
+.text-slate-3 {
+  color: rgb(var(--slate-3));
+}
+
+.bg-slate-5 {
+  background-color: rgb(var(--slate-5));
+}
+
+.bg-slate-3 {
+  background-color: rgb(var(--slate-3));
 }
