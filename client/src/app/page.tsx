@@ -1,10 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import tempImage from "@/ehnt.png";
 
 export default function Home() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+  });
+
   return (
     <main className="min-h-screen flex flex-col items-center">
       <div className="w-full p-20 flex justify-between items-center">
@@ -18,7 +24,10 @@ export default function Home() {
           </Link>
         </div>
 
-        <Link href="#" className="">
+        <Link
+          href="#"
+          className="bg-zinc-300 text-zinc-800 py-2 px-4 border-4 border-indigo-500 rounded hover:text-zinc-400 hover:bg-zinc-600 hover:scale-90 ease-out duration-200"
+        >
           Login
         </Link>
       </div>
@@ -31,17 +40,33 @@ export default function Home() {
         </p>
         <form onClick={() => {}} className="flex flex-col flex-wrap gap-3">
           <div className="flex gap-3">
-            <input type="text" className="" />
-            <input type="text" />
+            <input
+              type="text"
+              value={user.name}
+              onChange={(e) => {
+                setUser({ ...user, name: e.target.value });
+              }}
+              className="text-indigo-800 p-2 rounded"
+            />
+            <input
+              type="text"
+              value={user.email}
+              onChange={(e) => {
+                setUser({ ...user, email: e.target.value });
+              }}
+              className="text-indigo-800 p-2 rounded"
+            />
           </div>
-          <button className="border-4 border-indigo-500 flex-auto">
+          <button className="p-2 border-4 border-indigo-500 flex-auto rounded">
             Join Now
           </button>
         </form>
       </div>
 
       <div className="w-full px-20 border-2 border-rose-500 max-w-7xl flex">
-        <Image alt="" src={tempImage} width={200} height={400} layout="fixed" />
+        <div className="relative w-1/2 h-72">
+          <Image alt="image" src={tempImage} layout="fill" />
+        </div>
         <div>
           <h2 className=""></h2>
           <p className="">
