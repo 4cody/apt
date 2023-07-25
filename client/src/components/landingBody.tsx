@@ -36,7 +36,7 @@ export default () => {
               className="text-indigo-800 p-2 rounded"
             />
           </div>
-          <button className="p-2 border-4 border-indigo-500 flex-auto rounded">
+          <button className="p-2 border-4 border-indigo-500 flex-auto rounded hover:text-zinc-400 hover:bg-zinc-600 hover:scale-90 ease-out duration-100">
             Join Now
           </button>
         </form>
@@ -47,10 +47,10 @@ export default () => {
           <Image alt="image" src={tempImage} layout="fill" />
         </div>
         <div className="relative w-1/2 h-72 p-8 flex flex-col justify-center">
-          <h2 className="text-center p-6 font-bold text-2xl">
+          <h2 className="text-center p-6 font-bold text-2xl text-slate-600">
             Manage your Properties
           </h2>
-          <p className="text-center fon">
+          <p className="text-center font-semibold">
             Find convience and ease of rental managment with our clean and
             adaptable UI. Get useful information on the statistics of your
             properties and units.
@@ -58,12 +58,14 @@ export default () => {
         </div>
       </div>
 
+      <div className="w-full border-2 m-4 border-indigo-500"></div>
+
       <div className="w-full px-20 my-20 max-w-7xl flex">
         <div className="relative w-1/2 h-72 p-8 flex flex-col justify-center">
-          <h2 className="text-center p-6 font-bold text-2xl">
+          <h2 className="text-center p-6 font-bold text-2xl text-slate-600">
             Get Useful Reports
           </h2>
-          <p className="text-center fon">
+          <p className="text-center font-semibold">
             View or print reports on properties and units from financials to
             tenant history.
           </p>
@@ -73,15 +75,17 @@ export default () => {
         </div>
       </div>
 
+      <div className="w-full border-2 m-4 border-indigo-500"></div>
+
       <div className="w-full px-20 my-20 max-w-7xl flex">
         <div className="relative w-1/2 h-72">
           <Image alt="image" src={tempImage} layout="fill" />
         </div>
         <div className="relative w-1/2 h-72 p-8 flex flex-col justify-center">
-          <h2 className="text-center p-6 font-bold text-2xl">
+          <h2 className="text-center p-6 font-bold text-2xl text-slate-600">
             Visualize and Project Income
           </h2>
-          <p className="text-center fon">
+          <p className="text-center font-semibold">
             Find convience and ease of rental managment with our clean and
             adaptable UI. Get useful information on the statistics of your
             properties and units.
