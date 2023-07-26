@@ -13,7 +13,7 @@ export default () => (
     </div>
 
     <Link
-      href="#"
+      href="/dashboard"
       className="bg-zinc-300 text-zinc-800 py-2 px-4 border-4 border-indigo-500 rounded hover:text-zinc-400 hover:bg-zinc-600 hover:scale-90 ease-out duration-100"
     >
       Login
