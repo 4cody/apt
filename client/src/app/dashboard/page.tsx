@@ -39,6 +39,9 @@ export default function LoginPage() {
           <h2>Dashboard</h2>
           <BiSolidChevronRight />
         </div>
+        <div className="">
+          <h2 className="uppercase text-amber-300">Admin</h2>
+        </div>
       </section>
       <section className="grow">
         <div className="h-20 border-2 border-rose-100 flex">top NAV</div>
