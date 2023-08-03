@@ -5,7 +5,13 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { BsGrid3X3GapFill } from "react-icons/bs";
-import { BiSolidChevronRight, BiArrowToBottom } from "react-icons/bi";
+import {
+  BiSolidChevronRight,
+  BiArrowToBottom,
+  BiBuildingHouse,
+} from "react-icons/bi";
+
+import { GoPeople } from "react-icons/go";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -36,13 +42,24 @@ export default function LoginPage() {
         </div>
         <div className="flex items-center">
           <BsGrid3X3GapFill />
-          <h2>Dashboard</h2>
+          <h3>Dashboard</h3>
           <BiSolidChevronRight />
         </div>
         <div className="">
           <h2 className="uppercase text-amber-300">Admin</h2>
         </div>
+        <div className="flex items-center">
+          <BiBuildingHouse />
+          <h3>Properties</h3>
+          <BiSolidChevronRight className="hidden" />
+        </div>
+        <div className="flex items-center">
+          <GoPeople />
+          <h3>Tenats</h3>
+          <BiSolidChevronRight className="hidden" />
+        </div>
       </section>
+
       <section className="grow">
         <div className="h-20 border-2 border-rose-100 flex">top NAV</div>
         <div className="flex justify-between">
