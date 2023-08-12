@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsGrid3X3GapFill } from "react-icons/bs";
@@ -7,6 +8,8 @@ import { GoPeople } from "react-icons/go";
 
 export default function SideNav() {
   const [activeTab, setActiveTab] = useState("dashboard");
+
+  const viewSwitch = () => {};
 
   console.log(activeTab);
 
